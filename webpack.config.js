@@ -19,6 +19,9 @@ const config = {
         open: true,
         host: 'localhost',
     },
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js', '.json']
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'index.html',
@@ -55,8 +58,8 @@ const config = {
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
-        
-        
+
+
     } else {
         config.mode = 'development';
     }

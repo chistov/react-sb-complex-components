@@ -1,10 +1,18 @@
 import React from 'react'
 import {render} from 'react-dom'
+import ReactDOM from "react-dom";
+import { Button } from "./stories/Button";
 
-
-console.log("Hello World!");
+const App = () => {
+  return (
+    <>
+      <div>Check it out</div>
+      <Button label='lkj'/>
+    </>
+  )
+}
 
 ReactDOM.render(
-<h1>hello, there</h1>,
+<App/>,
 document.getElementById('root')
 );
