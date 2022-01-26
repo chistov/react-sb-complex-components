@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {render} from 'react-dom'
 import ReactDOM from "react-dom";
-import { Button } from "./stories/Button";
 import List from "./common-components/List";
 import {Header} from "./stories/Header";
 
@@ -28,9 +27,9 @@ const App = () => {
   )
 }
 
-ReactDOM.render(
+render(
 <App/>,
-document.getElementById('root')
+document.getElementById('root') || document.createElement('div')  // for testing purposes
 );
 
 export default App;
