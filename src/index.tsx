@@ -1,10 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {render} from 'react-dom'
+import ReactDOM from "react-dom";
+import List from "./common-components/List";
+import {Header} from "./stories/Header";
+
+const App = () => {
+  let [id, setId] = useState(0);
+  const updateNumber = (n:number) => {
+    setId(n);
+    console.log('upd: ', n);
+  }
+
+  const onLogin = () => console.log('onLogin')
+  const onLogout = () => console.log('onLogout')
+  const onCreateAccount = () => console.log('onCreateAcc')
 
 
-console.log("Hello World!");
+  return (
+    <>
+      <Header onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount}></Header>
+      <div>Item clicked {id}</div>
+      <div>
+        <List processClick={updateNumber}/>
+      </div>
+    </>
+  )
+}
 
-ReactDOM.render(
-<h1>hello, there</h1>,
-document.getElementById('root')
+render(
+<App/>,
+document.getElementById('root') || document.createElement('div')  // for testing purposes
 );
+
+export default App;
